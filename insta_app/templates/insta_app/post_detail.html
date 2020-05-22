@@ -1,0 +1,46 @@
+{% extends "base.html" %}{% load static %}
+
+
+{% block content %}
+
+	<div class="wrapper">
+		<header>
+			<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+				<div class="container">
+					<a class="navbar-brand" href="/">
+						<img src="{% static 'insta_app/img/camera.png' %}" width="40" height="40"> 
+						<span class="desktop">instaApp</span>
+					</a>
+					<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+						<span class="navbar-toggler-icon"></span>
+					</button>
+					<div class="collapse navbar-collapse" id="collapsibleNavbar">
+						<ul class="navbar-nav ml-auto">
+							<li><a href="/">Posts</a></li>
+							<li><a href="/">Upload</a></li>
+							<li><a href="/">Sign out</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<div class="container">
+			<h2>{{ post.title }}</h2>
+			<div class="row">
+				<div class="col-md-8">
+					<p>@{{ post.user.username }}</p>
+					<img src="{{ post.image.url }}" width="100%">
+				</div>
+				<div class="col-md-4">
+					<h5>{{ post.title }}</h5>
+					<p>{{ post.description }}</p>
+					<br>
+					<small>{{ post.uploaded_on }}</small>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+{% endblock %}

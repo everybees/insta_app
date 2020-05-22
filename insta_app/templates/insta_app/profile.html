@@ -1,0 +1,73 @@
+{% extends "base.html" %}{% load static %}
+
+
+{% block content %}
+
+	<div class="wrapper">
+	<header>
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+			<div class="container">
+				<a class="navbar-brand" href="/">
+					<img src="{% static 'insta_app/img/camera.png' %}" width="40" height="40"> 
+					<span class="desktop">instaApp</span>
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="collapsibleNavbar">
+					<ul class="navbar-nav ml-auto">
+						<li><a href="/">Posts</a></li>
+						<li><a href="/">Upload</a></li>
+						<li><a href="/">Sign out</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+    
+    
+	<main>
+		<div class="container">
+			<h3>Profile</h3>
+			<div class="messages-container">
+
+			</div>
+
+			<div class="container">
+				<div class="row">
+					<div class="col-3">
+						<img src="{{ profile.image.url }}" height="150">
+					</div>
+					<div class="col-9">
+						<h5>@{{ user.username }}</h5>
+						<h6>Bio:</h6>
+						<p>I am a sweet tooth kind of girl</p>
+					</div>
+				</div>
+			</div>
+			<br>
+			<hr>
+
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4">
+						<div class="card mb-2">
+							<img class="card-img-top" src="{{ post.image.url }}">
+							<div class="card-body">
+								<h5 class="card-title">{{ project.title }}</h5>
+								<p class="card-text">{{ project.description | linebreaksbr }}</p>
+									Read More
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</main>
+
+	<div class="push"></div>
+</div>
+
+{% endblock %}

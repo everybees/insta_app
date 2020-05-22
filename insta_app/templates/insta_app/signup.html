@@ -1,0 +1,79 @@
+{% extends "base.html" %} {% load static %}
+
+{% block content %}
+
+<div class="wrapper">
+	<header>
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+			<div class="container">
+				<a class="navbar-brand" href="/">
+					<img src="{% static 'insta_app/img/camera.png' %}" width="40" height="40"> 
+					<span class="desktop">instaApp</span>
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<!-- <div class="collapse navbar-collapse" id="collapsibleNavbar">
+					<ul class="navbar-nav ml-auto">
+						<li><a href="/">Blog</a></li>
+						<li><a href="/">About</a></li>
+						<li><a href="/">Help</a></li>
+					</ul>
+				</div> -->
+			</div>
+		</nav>
+	</header>
+    
+    
+	<main>
+		<div class="container">
+			<div class="messages-container">
+
+			</div>
+
+			<div class="row">
+				<div class="col-md-6 col-md-offset-3">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<h3 class="panel-title">Sign up for Parsifal</h3>
+						</div>
+						<div class="panel-body">
+							<form action="/signup/" method="post">
+								{% csrf_token %}
+								<div class="panel-group">
+									<label class="control-label" for="id_username">Username</label>
+									<input type="text" class="form-control" value="" id="id_username" name="username" maxlength="30">
+									<span class="help-block">(Usernames may contain <strong>alphanumeric</strong>, <strong>_</strong> and <strong>.</strong> characters)</span>
+
+								</div>
+								<div class="panel-group">
+									<label class="control-label" for="id_email">Email</label>
+									<input type="email" class="form-control" value="" id="id_email" name="email" maxlength="None">
+
+								</div>
+								<div class="panel-group">
+									<label class="control-label" for="id_password">Password</label>
+									<input type="password" class="form-control" value="" id="id_password" name="password">
+
+								</div>
+								<div class="panel-group">
+									<label class="control-label" for="id_confirm_password">Confirm your password</label>
+									<input type="password" class="form-control" value="" id="id_confirm_password" name="confirm_password">
+
+								</div>
+							<button type="submit" class="btn btn-success">Create an account</button>
+							</form>
+							<br>
+							Click <a href="/signin/">here</a> to signin
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</main>
+
+	<div class="push"></div>
+</div>
+
+{% endblock %}

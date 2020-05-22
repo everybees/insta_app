@@ -1,0 +1,90 @@
+{% extends "base.html" %} {% load static %}
+
+{% block content %}
+
+	<header>
+		<!-- <nav class="navbar navbar-default">
+			<div class="container">
+				<div class="navbar-header">
+					<button data-target="#header-menu" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a href="/" class="navbar-brand value-brand">instaApp</a>
+				</div>
+				<div class="collapse navbar-collapse" id="header-menu">
+					<ul class="nav navbar-nav">
+						<li><a href="/check/">Blog</a></li>
+						<li><a href="/check/">About</a></li>
+						<li><a href="/check/">Help</a></li>
+					</ul>
+
+					<a href="/signin/" title="Sign in" class="btn btn-default navbar-btn navbar-right">Sign in</a>
+					<a href="/signup/" title="Sign up" class="btn btn-primary navbar-btn navbar-right" style="margin-right: 5px;">Sign up</a>
+
+				</div>
+			</div>
+		</nav> -->
+
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark sticky-top">
+			<div class="container">
+				<a class="navbar-brand" href="/">
+					<img src="{% static 'insta_app/img/camera.png' %}" width="40" height="40"> 
+					<span class="desktop">instaApp</span>
+				</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<!-- <div class="collapse navbar-collapse" id="collapsibleNavbar">
+					<ul class="navbar-nav ml-auto">
+						<li><a href="/">Blog</a></li>
+						<li><a href="/">About</a></li>
+						<li><a href="/">Help</a></li>
+					</ul>
+				</div> -->
+			</div>
+		</nav>
+	</header>
+
+	<main>
+		<div class="container">
+			<div class="messages-container">
+
+			</div>
+
+
+			<div class="row cover">
+				<div class="col-md-7">
+					<h4>Join millions in sharing memories</h4>
+					<br>
+					<img src="{% static 'insta_app/img/phonerust.jpg' %}" width="600" alt="akanke">
+				</div>
+				<div class="col-md-5">
+					<h2>Sign up to instaApp</h2>
+					<form action="/signup/" method="post" id="new-account">
+						<input type='hidden' name='csrfmiddlewaretoken' value='yflz7rUpFxytC1jvTBoStgAo6JQfwy22' />
+						<div class="form-group">
+							<input class="form-control input-lg" type="text" placeholder="Username" name="username">
+						</div>
+						<div class="form-group">
+							<input class="form-control input-lg" type="password" placeholder="Password" name="password">
+							<input type="password" name="confirm_password" value="" style="display: none;">
+						</div>
+						<div class="form-group">
+							<input class="form-control input-lg" type="email" placeholder="Email" name="email">
+						</div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-success btn-lg btn-block">Create a new account</button>
+						</div>
+					</form>
+					Click <a href="/signin/">Sign in</a> if you have an account 
+				</div>
+			</div>
+
+
+		</div>
+	</main>
+
+{% endblock %}
